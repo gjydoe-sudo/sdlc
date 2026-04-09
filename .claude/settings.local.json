@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(railway logs --build)",
+      "Bash(railway logs)",
+      "Bash(railway status)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://sdlc-production.up.railway.app/api/health)",
+      "Bash(curl -s https://sdlc-production.up.railway.app/api/health)",
+      "Bash(railway up)",
+      "Bash(railway whoami)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://sdlc-production.up.railway.app/)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''rpId:'', d.get\\(''rp'',{}\\).get\\(''id''\\)\\); print\\(''timeout:'', d.get\\(''timeout''\\)\\)\")",
+      "Bash(node -e \"let d='''';process.stdin.on\\(''data'',c=>d+=c\\);process.stdin.on\\(''end'',\\(\\)=>{const o=JSON.parse\\(d\\);console.log\\(''rpId:'',o.rp?.id,''timeout:'',o.timeout\\)}\\)\")",
+      "Bash(curl -sI https://sdlc-production.up.railway.app/login)",
+      "Bash(git add app/globals.css app/api/health/route.ts package.json railway.toml .railwayignore .github/workflows/deploy-railway.yml)",
+      "Bash(git commit -m \"fix: dark mode toggle, health endpoint, Railway deployment config\")",
+      "Bash(git push origin main)",
+      "Bash(railway up --detach)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://sdlc-production.up.railway.app/login)",
+      "Bash(railway service)",
+      "Bash(railway --help)",
+      "Bash(railway deployment --help)"
+    ]
+  }
+}
