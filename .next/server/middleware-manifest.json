@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/node_modules_next_dist_esm_build_templates_edge-wrapper_0a9gg_0.js",
+        "server/edge/chunks/[root-of-the-server]__0_lzsr-._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_09_s2fq.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_09_s2fq.js",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/(\\/?index|\\/?index\\\\.json))?[\\/#\\?]?$",
+          "originalSource": "/"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/calendar(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/calendar"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/login(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/login"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "56XeKlNIlCFgtyOVm40ij",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "jcy6c5PHfCJb3KkwEZW7xhotgFvYkfLi5zxmY7DxH9A=",
+        "__NEXT_PREVIEW_MODE_ID": "e1e0808bc7a78533f79f345e2397a783",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "d14708229b7721223fe064dc2b2b2f306f6e1d8a7a609e2c1ea905eb8b430ba6",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1732116d1ac2796dd2af52934badc6caa4523a68c8a0cee7d733c98df780f788"
+      }
+    }
+  },
+  "sortedMiddleware": [
+    "/"
+  ],
+  "functions": {}
+}
