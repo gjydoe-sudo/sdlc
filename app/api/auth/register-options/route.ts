@@ -15,21 +15,21 @@ export async function POST(request: NextRequest) {
 
     const existingUser = userDB.findByUsername(username.trim())
     if (existingUser) {
-      return NextResponse.json({ error: 'Username already taken' }, { status: 409 })
+      const existingAuthenticators = authenticatorDB.findByUserId(existingUser.id)
+      if (existingAuthenticators.length > 0) {
+        return NextResponse.json({ error: 'Username already taken' }, { status: 409 })
+      }
+      userDB.delete(existingUser.id)
     }
 
     const user = userDB.create(username.trim())
-    const existingAuthenticators = authenticatorDB.findByUserId(user.id)
 
     const options = await generateRegistrationOptions({
       rpName: RP_NAME,
       rpID: RP_ID,
       userName: user.username,
       attestationType: 'none',
-      excludeCredentials: existingAuthenticators.map((auth) => ({
-        id: auth.credential_id,
-        transports: auth.transports ? JSON.parse(auth.transports) : undefined
-      })),
+      excludeCredentials: [],
       authenticatorSelection: {
         residentKey: 'preferred',
         userVerification: 'preferred'
