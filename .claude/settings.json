@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npm run build)",
-      "Bash(npm run test:unit)"
+      "Bash(npm run test:unit)",
+      "Bash(railway variables set RP_ID=sdlc-production.up.railway.app ORIGIN=https://sdlc-production.up.railway.app)",
+      "Bash(railway variables)"
     ]
   }
 }

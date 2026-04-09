@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.claude
+tests
+todos.db
+todos.db-shm
+todos.db-wal
+*.md
+.env.local
+.env*.local
+playwright.config.ts
+vitest.config.ts
