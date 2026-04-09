@@ -187,6 +187,10 @@ export const userDB = {
 
   findById(id: number): User | undefined {
     return db.prepare('SELECT * FROM users WHERE id = ?').get(id) as User | undefined
+  },
+
+  delete(id: number): void {
+    db.prepare('DELETE FROM users WHERE id = ?').run(id)
   }
 }
 

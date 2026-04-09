@@ -19,7 +19,8 @@ export async function POST(request: NextRequest) {
 
     const authenticators = authenticatorDB.findByUserId(user.id)
     if (authenticators.length === 0) {
-      return NextResponse.json({ error: 'No passkeys registered' }, { status: 400 })
+      userDB.delete(user.id)
+      return NextResponse.json({ error: 'No passkeys registered for this user. Account has been removed — please register again.' }, { status: 400 })
     }
 
     const options = await generateAuthenticationOptions({
